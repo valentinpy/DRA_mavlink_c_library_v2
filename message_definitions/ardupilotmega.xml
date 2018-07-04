@@ -1486,17 +1486,35 @@
       <field type="float" name="rpm2">RPM Sensor2</field>
     </message>
 
-    <!-- VPY DRA Sensor-->
-    <message id="240" name="DRA_SENSOR">
-      <description>DRA Sensor</description>
-      <field type="int16_t" name="dra_val">DRA Sensor value (VPY)</field>
+
+    <!-- VPY Test Mavlink #1 -->
+    <message id="237" name="VPY_TEST_1">
+      <description>VPY Test 1</description>
+      <field type="int16_t" name="vpy_test_1">VPY Test</field>
+    </message>
+    
+    <!-- VPY Test Mavlink #2-->
+    <message id="238" name="VPY_TEST_2">
+      <description>VPY Test 2</description>
+      <field type="int16_t" name="vpy_test_2">VPY Test</field>
     </message>
 
-    <!-- VPY Test Sensor-->
-    <message id="239" name="VPY_TEST">
-      <description>VPY Test</description>
-      <field type="int16_t" name="vpy_test">VPY Test</field>
+      <!-- VPY DRA Status-->
+    <message id="239" name="DRA_STATUS">
+      <description>DRA Status</description>
+      <field type="uint32_t" name="serial_number">DRA Drone Serial Number</field>
+      <field type="uint32_t" name="immatriculation">DRA Drone Immatriculation</field>
+      <!-- <field type="uint8_t" name="battery_voltage">DRA Battery voltage</field>
+      <field type="uint8_t[4]" name="battery_cell_voltage">DRA Battery cells voltage (4x)</field> -->
     </message>
+
+    <!-- VPY DRA Real time infos-->
+    <message id="240" name="DRA_RT_INFOS">
+      <description>VPY DRA Real time informations (DAS sensor, maker released,...)</description>
+      <field type="int32_t" name="dra_val">DRA DAS Avalanche Sensor Value from K64</field>
+      <field type="int8_t" name="marked">Indicate when a marker has been released (boolean)</field>
+    </message>
+
 
     <!-- ardupilot specific mavlink2 messages starting at 11000-->
     <message id="11000" name="DEVICE_OP_READ">
